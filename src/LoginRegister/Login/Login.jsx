@@ -5,10 +5,6 @@ const Login = () => {
     return (
         <div>
             <SharedNav></SharedNav>
-            <h2>
-
-                ahgiuagdgag uayg
-            </h2>
         </div>
     );
 };

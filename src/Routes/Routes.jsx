@@ -1,15 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
-import Navigation from "../pages/Navigation/Navigation";
+import Login from "../LoginRegister/Login/Login";
+import App from "../App";
 import Home from "../pages/Home/Home";
-import Login from "../pages/Login/Login";
 
 const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home></Home>,
+      element: <App></App>,
       children:[
         {
-           
+           path:'/',
+           element:<Home></Home>,
+           loader:()=>fetch('http://localhost:8000/spots')
         }
       ]
     },

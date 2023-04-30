@@ -9,13 +9,15 @@ const Navigation = () => {
     return (
         <Navbar expand="lg">
             <Container>
-                <Navbar.Brand href="#home"> <img className='navLogo light' src={logo} alt="" /> </Navbar.Brand>
+                <Link to="/">
+                    <img className='navLogo light' src={logo} alt="" />
+                </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
                         <div>
-                        <input type="text" placeholder='Search your Destination...' className='px-5 py-2 rounded mx-2 border-light opacity-75' />
-                        <FaSearch />
+                            <input type="text" placeholder='Search your Destination...' className='px-5 py-2 rounded mx-2 border-light opacity-75' />
+                            <FaSearch />
                         </div>
                         <Nav.Link className='mx-2 fw-bold text-light' href="#home">News</Nav.Link>
                         <Nav.Link className='mx-2 fw-2 fw-bold text-light' href="#link">Destination</Nav.Link>
@@ -28,7 +30,7 @@ const Navigation = () => {
                     </Nav>
                 </Navbar.Collapse>
             </Container>
-        </Navbar>
+        </Navbar >
     );
 };
 
