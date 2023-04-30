@@ -36,7 +36,7 @@ const Navigation = () => {
                         {
                             user ?
                                 <div>
-                                    <span className='text-light mx-3 fw-bold'>{user.displayName
+                                    <span className='text-light me-3 fw-bold'>{user.displayName
                                     }</span>
                                     <Button className='text-light' variant="dark" onClick={logOutHandler}>Logout</Button>
                                 </div>

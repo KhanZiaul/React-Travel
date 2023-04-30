@@ -30,7 +30,7 @@ const SharedNav = () => {
                         {
                             user ?
                                 <div>
-                                    <span className=' mx-3 fw-bold'>{user.displayName
+                                    <span className=' me-3 fw-bold'>{user.displayName
                                     }</span>
                                     <Button className='text-light' variant="dark" onClick={logOutHandler}>Logout</Button>
                                 </div>

@@ -6,6 +6,7 @@ import SpotDetails from "../pages/SpotDetails/SpotDetails";
 import Booking from "../pages/Booking/Booking";
 import SharedLayout from "../Layouts/SharedLayout";
 import Register from "../pages/Register/Register";
+import PrivateRouter from "../PrivateRouter/PrivateRouter";
 
 const router = createBrowserRouter([
   {
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'booking',
-        element: <Booking></Booking>
+        element: <PrivateRouter><Booking></Booking></PrivateRouter>
       }
     ]
   }
