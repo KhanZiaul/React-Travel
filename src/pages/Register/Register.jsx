@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import { FaFacebook, FaFacebookF, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
@@ -15,20 +16,33 @@ const Register = () => {
         const Email = event.target.email.value
         const Password = event.target.password.value
         const ConfirmPassword = event.target.confirmPassword.value
+        console.log(Password,ConfirmPassword)
         
-        if(Password === ConfirmPassword){
-            return ;
+        if ( Password !== ConfirmPassword) {
+            return
         }
 
         createUser(Email, Password)
             .then((userCredential) => {
                 const user = userCredential.user;
+                updateUserProfile(userCredential.user, Name)
             })
             .catch((error) => {
                 const errorMessage = error.message;
+                console.log(errorMessage)
             });
 
         event.target.reset()
+    }
+
+    function updateUserProfile(user, name) {
+        updateProfile(user, {
+            displayName: name
+        }).then(() => {
+
+        }).catch((error) => {
+
+        });
     }
 
     return (
