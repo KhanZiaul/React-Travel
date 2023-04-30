@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import logo from '../../images/logo.png'
 import './SharedNav.css'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const SharedNav = () => {
+    const { user, logOut } = useContext(AuthContext)
+    function logOutHandler() {
+        logOut().then(() => {
+
+        }).catch((error) => {
+
+        });
+    }
     return (
         <Navbar expand="lg">
             <Container>
@@ -18,7 +27,16 @@ const SharedNav = () => {
                         <Nav.Link className='mx-4 fw-2 fw-bold' href="#link">Destination</Nav.Link>
                         <Nav.Link className='mx-4 fw-2 fw-bold' href="#link">Blog</Nav.Link>
                         <Nav.Link className='mx-4 fw-2 fw-bold' href="#link">Contact</Nav.Link>
-                        <Link to='/layout/login' > <Button className='text-light mx-4' variant="dark">Login</Button></Link>
+                        {
+                            user ?
+                                <div>
+                                    <span className=' mx-3 fw-bold'>{user.displayName
+                                    }</span>
+                                    <Button className='text-light' variant="dark" onClick={logOutHandler}>Logout</Button>
+                                </div>
+                                :
+                                <Link to='/layout/login' > <Button className='text-light' variant="dark">Login</Button></Link>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Container>
