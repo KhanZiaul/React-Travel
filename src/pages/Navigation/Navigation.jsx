@@ -10,7 +10,7 @@ const Navigation = () => {
         <Navbar expand="lg">
             <Container >
                 <Link to="/">
-                    <img className='navLogo light' src={logo} alt="" />
+                    <img className='navLogo bg-light text-light' src={logo} alt="" />
                 </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
