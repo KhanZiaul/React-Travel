@@ -3,7 +3,7 @@ import { ListGroup } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FaFacebook, FaFacebookF, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { FacebookAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
@@ -11,7 +11,10 @@ const Login = () => {
     const { popUpSignIn, signInUser } = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider();
     const facebookProvider = new FacebookAuthProvider();
-
+    const location = useLocation()
+    console.log(location)
+    const from = location?.state?.from?.pathname || '/'
+    const navigate = useNavigate()
     function formHandler(event) {
         event.preventDefault()
         const Email = event.target.email.value
@@ -19,6 +22,7 @@ const Login = () => {
         signInUser(Email, Password)
             .then((userCredential) => {
                 const user = userCredential.user;
+                navigate(from , { replace: true })
             })
             .catch((error) => {
                 const errorMessage = error.message;

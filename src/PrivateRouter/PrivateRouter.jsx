@@ -8,7 +8,7 @@ const PrivateRouter = ({children}) => {
     if(user){
         return children
     }
-    return <Navigate to='/layout/login'></Navigate>
+    return <Navigate state={{from:location}} to='/layout/login' replace></Navigate>
 };
 
 export default PrivateRouter;
