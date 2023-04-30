@@ -23,6 +23,16 @@ const Login = () => {
             });
     }
 
+    function facebookHandler() {
+
+        popUpSignIn(facebookProvider)
+            .then((result) => {
+                const user = result.user;
+
+            }).catch((error) => {
+                const errorMessage = error.message;
+            });
+    }
 
     return (
         <div className='w-50 mx-auto border p-4 rounded'>
