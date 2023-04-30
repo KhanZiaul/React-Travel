@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import logo from '../../images/logo.png'
 import './Navigation.css'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Navigation = () => {
+    const { user } = useContext(AuthContext)
     return (
         <Navbar expand="lg">
             <Container >
@@ -24,7 +26,16 @@ const Navigation = () => {
                 </Navbar.Collapse>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
-                        <Link to='/layout/login' > <Button className='text-light' variant="dark">Login</Button></Link>
+                        {
+                            user ?
+                                <div>
+                                    <span className='text-light mx-3 fw-bold'>{user.displayName
+                                    }</span>
+                                    <Link to='/layout/login' > <Button className='text-light' variant="dark">Logout</Button></Link>
+                                </div>
+                                :
+                                <Link to='/layout/login' > <Button className='text-light' variant="dark">Login</Button></Link>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Container>

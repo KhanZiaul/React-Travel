@@ -19,6 +19,7 @@ const Login = () => {
         signInUser(Email, Password)
             .then((userCredential) => {
                 const user = userCredential.user;
+                console.log(user)
             })
             .catch((error) => {
                 const errorMessage = error.message;
