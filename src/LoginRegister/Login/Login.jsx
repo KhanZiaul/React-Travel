@@ -1,22 +1,40 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { ListGroup } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FaFacebook, FaFacebookF, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { FacebookAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
+    const { createUser, popUpSignIn } = useContext(AuthContext)
+    const googleProvider = new GoogleAuthProvider();
+    const facebookProvider = new FacebookAuthProvider();
+
+    function googleHandler() {
+
+        popUpSignIn(googleProvider)
+            .then((result) => {
+                const user = result.user;
+
+            }).catch((error) => {
+                const errorMessage = error.message;
+            });
+    }
+
+
     return (
         <div className='w-50 mx-auto border p-4 rounded'>
             <Form >
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" required/>
+                    <Form.Control type="email" placeholder="Enter email" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" required/>
+                    <Form.Control type="password" placeholder="Password" required />
                 </Form.Group>
                 <div className='d-flex justify-content-between'>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -32,11 +50,11 @@ const Login = () => {
 
             <div className='mt-3'>
                 <ListGroup className='w-50 mx-auto'>
-                    <ListGroup.Item className='d-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
+                    <ListGroup.Item onClick={facebookHandler} className='d-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
                         <FaFacebookF className=' text-primary rounded-circle' />
                         <span>Continue With Facebook</span>
                     </ListGroup.Item>
-                    <ListGroup.Item className='d-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
+                    <ListGroup.Item onClick={googleHandler} className='d-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
                         <FaGoogle className='text-primary rounded-circle ' />
                         <span>Continue With Google</span>
                     </ListGroup.Item>
