@@ -13,8 +13,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>,
-        loader: () => fetch('http://localhost:8000/spots')
+        element: <Home></Home>
       },
       {
         path: ':id',

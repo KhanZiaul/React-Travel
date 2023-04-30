@@ -11,6 +11,7 @@ import "./Spots.css";
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper";
 import { Link } from "react-router-dom";
+import { FaArrowRight } from 'react-icons/fa';
 
 export default function Spots() {
     const [datas, setDatas] = useState([])
@@ -40,24 +41,27 @@ export default function Spots() {
                 {
                     datas?.map(data => {
                         return (
-                            <SwiperSlide>
+                            <SwiperSlide key={data.id}>
                                 <div className="p-3">
                                     <div>
                                         <h2 className='text-light mb-2'>{data.name}</h2>
                                         <p className='text-light'>{data.details.slice(0, 150) + '....'}</p>
-                                    </div>
-                                    <div>
                                         <Link to={`/${data.id}`}>
-                                            <img className='spotsImage' src={data.photoURL} alt="" />
-                                        </Link>
-                                    </div>
+                                        <button className="btn btn-warning mb-2">Booking <FaArrowRight /> </button>
+                                    </Link>
                                 </div>
+                                <div>
+
+                                    <img className='spotsImage' src={data.photoURL} alt="" />
+
+                                </div>
+                            </div>
                             </SwiperSlide>
-                        )
+            )
                     })
                 }
 
-            </Swiper>
+        </Swiper >
         </>
     );
 }
