@@ -8,7 +8,7 @@ import { FaSearch } from 'react-icons/fa';
 const Navigation = () => {
     return (
         <Navbar expand="lg">
-            <Container>
+            <Container >
                 <Link to="/">
                     <img className='navLogo light' src={logo} alt="" />
                 </Link>
