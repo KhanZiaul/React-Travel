@@ -1,6 +1,6 @@
 import React from 'react';
 import Navigation from '../Navigation/Navigation';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { Button, Container, Form } from 'react-bootstrap';
 
 const SpotDetails = () => {
@@ -13,26 +13,6 @@ const SpotDetails = () => {
                     <h1 className='text-light'>{spotDetails.name}</h1>
                     <p className='text-light'>{spotDetails.details}</p>
                 </div>
-                {/* <div className='bg-light mb-3 p-3'>
-                    <label htmlFor="">
-                        Origin
-                        <input type="text" placeholder='' />
-                    </label>
-                    <label htmlFor="">
-                        Destination
-                        <input type="text" placeholder='' />
-                    </label>
-                    <div className='d-flex gap-3 my-3'>
-                        <label htmlFor="">
-                            From
-                            <input type="date" placeholder='' />
-                        </label>
-                        <label htmlFor="">
-                            To
-                            <input type="date" placeholder='' />
-                        </label>
-                    </div>
-                </div> */}
 
                 <Form className='bg-light mb-3 p-3 w-50 rounded'>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -56,9 +36,11 @@ const SpotDetails = () => {
                             <Form.Control type="date" placeholder="" />
                         </Form.Group>
                     </div>
-                    <Button className='w-100 text-light fw-bold' variant="warning" type="submit">
-                        Start Booking
-                    </Button>
+                    <Link to='/layout/booking'>
+                        <Button className='w-100 text-light fw-bold' variant="warning" type="submit">
+                            Start Booking
+                        </Button>
+                    </Link>
                 </Form>
             </Container>
         </div>

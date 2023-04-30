@@ -10,11 +10,7 @@ const Home = () => {
     return (
         <div className='bgImage'>
             <Navigation></Navigation>
-            <div className='d-flex gap-5 my-5 mx-auto'>
-                {
-                    datas.map(data => <Spots data={data} key={data.id}></Spots>)
-                }
-            </div>
+            <Spots></Spots>
         </div>
 
     );
