@@ -12,14 +12,14 @@ const AuthProvider = ({children}) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
-    function googleSignIn(provider){
+    function popUpSignIn(provider){
         return signInWithPopup(auth,provider)
     }
 
     const authInfo ={
         user:'khan zia',
         createUser,
-        googleSignIn
+        popUpSignIn
     }
     return (
         <AuthContext.Provider value={authInfo}>

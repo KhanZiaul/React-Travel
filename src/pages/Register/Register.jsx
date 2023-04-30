@@ -5,11 +5,12 @@ import Form from 'react-bootstrap/Form';
 import { FaFacebook, FaFacebookF, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import { GoogleAuthProvider, updateProfile } from 'firebase/auth';
+import { FacebookAuthProvider, GoogleAuthProvider, updateProfile } from 'firebase/auth';
 
 const Register = () => {
-    const { createUser, googleSignIn } = useContext(AuthContext)
+    const { createUser, popUpSignIn } = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider();
+    const facebookProvider = new FacebookAuthProvider();
     function formHandler(event) {
         event.preventDefault()
         const Name = event.target.name.value
@@ -44,7 +45,18 @@ const Register = () => {
 
     function googleHandler() {
 
-        googleSignIn(googleProvider)
+        popUpSignIn(googleProvider)
+            .then((result) => {
+                const user = result.user;
+
+            }).catch((error) => {
+                const errorMessage = error.message;
+            });
+    }
+
+    function facebookHandler() {
+
+        popUpSignIn(facebookProvider)
             .then((result) => {
                 const user = result.user;
 
@@ -82,7 +94,7 @@ const Register = () => {
 
             <div className='mt-3'>
                 <ListGroup className='w-50 mx-auto'>
-                    <ListGroup.Item  className='d-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
+                    <ListGroup.Item onClick={facebookHandler} className='d-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
                         <FaFacebookF className='text-primary rounded-circle' />
                         <span>Continue With Facebook</span>
                     </ListGroup.Item>
