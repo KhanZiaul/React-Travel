@@ -11,12 +11,12 @@ const Login = () => {
             <Form >
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control type="email" placeholder="Enter email" required/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control type="password" placeholder="Password" required/>
                 </Form.Group>
                 <div className='d-flex justify-content-between'>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -32,12 +32,12 @@ const Login = () => {
 
             <div className='mt-3'>
                 <ListGroup className='w-50 mx-auto'>
-                    <ListGroup.Item className='d-flex align-items-center gap-5 rounded-pill my-3'>
-                        <FaFacebookF className='bg-primary text-light rounded-circle' />
+                    <ListGroup.Item className='d-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
+                        <FaFacebookF className=' text-primary rounded-circle' />
                         <span>Continue With Facebook</span>
                     </ListGroup.Item>
-                    <ListGroup.Item className='d-flex align-items-center gap-5 rounded-pill my-3'>
-                        <FaGoogle className=' rounded-circle ' />
+                    <ListGroup.Item className='d-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
+                        <FaGoogle className='text-primary rounded-circle ' />
                         <span>Continue With Google</span>
                     </ListGroup.Item>
                 </ListGroup>
