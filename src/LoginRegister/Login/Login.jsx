@@ -8,27 +8,38 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { FacebookAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-    const { createUser, popUpSignIn } = useContext(AuthContext)
+    const { popUpSignIn, signInUser } = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider();
     const facebookProvider = new FacebookAuthProvider();
 
-    function googleHandler() {
+    function formHandler(event) {
+        event.preventDefault()
+        const Email = event.target.email.value
+        const Password = event.target.password.value
+        signInUser(Email, Password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+            });
 
+        event.target.reset()
+    }
+
+    function googleHandler() {
         popUpSignIn(googleProvider)
             .then((result) => {
                 const user = result.user;
-
             }).catch((error) => {
                 const errorMessage = error.message;
             });
     }
 
     function facebookHandler() {
-
         popUpSignIn(facebookProvider)
             .then((result) => {
                 const user = result.user;
-
             }).catch((error) => {
                 const errorMessage = error.message;
             });
@@ -36,15 +47,15 @@ const Login = () => {
 
     return (
         <div className='w-50 mx-auto border p-4 rounded'>
-            <Form >
+            <Form onSubmit={formHandler}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" required />
+                    <Form.Control type="email" placeholder="Enter email" name='email' required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" required />
+                    <Form.Control type="password" placeholder="Password" name='password' required />
                 </Form.Group>
                 <div className='d-flex justify-content-between'>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
