@@ -8,13 +8,13 @@ const SpotDetails = () => {
     return (
         <div className='bgImage'>
             <Navigation></Navigation>
-            <Container className='mt-5 d-flex gap-5'>
-                <div className='w-50'>
+            <Container className='mt-5 d-lg-flex gap-5'>
+                <div className='w-auto'>
                     <h1 className='text-light'>{spotDetails.name}</h1>
                     <p className='fw-normal text-light'>{spotDetails.details}</p>
                 </div>
 
-                <Form className='bg-light mb-3 p-3 w-50 rounded'>
+                <Form className='bg-light mb-3 p-3 w-auto rounded'>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Origion</Form.Label>
                         <Form.Control type="text" placeholder="" className='fw-bold' />
@@ -24,7 +24,7 @@ const SpotDetails = () => {
                         <Form.Label>Destination</Form.Label>
                         <Form.Control type="text" placeholder="" className='fw-bold' />
                     </Form.Group>
-                    <div className='d-flex gap-3 my-3'>
+                    <div className='d-lg-flex gap-3 my-3'>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>From</Form.Label>
