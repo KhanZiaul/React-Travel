@@ -65,7 +65,7 @@ const Register = () => {
     }
 
     return (
-        <div className='w-50 mx-auto border p-4 rounded'>
+        <div className='w-75 mx-auto border p-3 rounded mt-4'>
             <Form onSubmit={formHandler}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
@@ -92,14 +92,14 @@ const Register = () => {
             </Form>
 
             <div className='mt-3'>
-                <ListGroup className='w-50 mx-auto'>
-                    <ListGroup.Item onClick={facebookHandler} className='d-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
+                <ListGroup className='w-auto mx-auto'>
+                    <ListGroup.Item onClick={facebookHandler} className='d-lg-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
                         <FaFacebookF className='text-primary rounded-circle' />
-                        <span>Continue With Facebook</span>
+                        <span>Login With Facebook</span>
                     </ListGroup.Item>
-                    <ListGroup.Item onClick={googleHandler} className='d-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
+                    <ListGroup.Item onClick={googleHandler} className='d-lg-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
                         <FaGoogle className='text-primary rounded-circle ' />
-                        <span>Continue With Google</span>
+                        <span>Login With Google</span>
                     </ListGroup.Item>
                 </ListGroup>
             </div>

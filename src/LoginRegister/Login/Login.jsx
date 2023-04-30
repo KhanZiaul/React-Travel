@@ -50,7 +50,7 @@ const Login = () => {
     }
 
     return (
-        <div className='w-50 mx-auto border p-4 rounded'>
+        <div className='w-75 mx-auto mt-4 border p-3 rounded'>
             <Form onSubmit={formHandler}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -61,7 +61,7 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" name='password' required />
                 </Form.Group>
-                <div className='d-flex justify-content-between'>
+                <div className='d-lg-flex justify-content-between my-2'>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Remember Me" />
                     </Form.Group>
@@ -74,14 +74,14 @@ const Login = () => {
             </Form>
 
             <div className='mt-3'>
-                <ListGroup className='w-50 mx-auto'>
-                    <ListGroup.Item onClick={facebookHandler} className='d-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
+                <ListGroup className='w-auto mx-lg-auto'>
+                    <ListGroup.Item onClick={facebookHandler} className='d-lg-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
                         <FaFacebookF className=' text-primary rounded-circle' />
-                        <span>Continue With Facebook</span>
+                        <span>Login With Facebook</span>
                     </ListGroup.Item>
-                    <ListGroup.Item onClick={googleHandler} className='d-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
+                    <ListGroup.Item onClick={googleHandler} className='d-lg-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
                         <FaGoogle className='text-primary rounded-circle ' />
-                        <span>Continue With Google</span>
+                        <span>Login With Google</span>
                     </ListGroup.Item>
                 </ListGroup>
             </div>
