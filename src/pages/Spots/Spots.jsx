@@ -45,9 +45,9 @@ export default function Spots() {
                                 <div className="p-3">
                                     <div>
                                         <h2 className='text-light mb-2'>{data.name}</h2>
-                                        <p className='text-light'>{data.details.slice(0, 150) + '....'}</p>
+                                        <p className='fw-normal'>{data.details.slice(0, 150) + '....'}</p>
                                         <Link to={`/${data.id}`}>
-                                        <button className="btn btn-warning mb-2">Booking <FaArrowRight /> </button>
+                                        <button className="btn btn-warning mb-2 text-white ">Booking <FaArrowRight /> </button>
                                     </Link>
                                 </div>
                                 <div>
