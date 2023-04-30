@@ -5,23 +5,20 @@ import Form from 'react-bootstrap/Form';
 import { FaFacebook, FaFacebookF, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import { updateProfile } from 'firebase/auth';
+import { GoogleAuthProvider, updateProfile } from 'firebase/auth';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext)
-
+    const { createUser, googleSignIn } = useContext(AuthContext)
+    const googleProvider = new GoogleAuthProvider();
     function formHandler(event) {
         event.preventDefault()
         const Name = event.target.name.value
         const Email = event.target.email.value
         const Password = event.target.password.value
         const ConfirmPassword = event.target.confirmPassword.value
-        console.log(Password,ConfirmPassword)
-        
-        if ( Password !== ConfirmPassword) {
+        if (Password !== ConfirmPassword) {
             return
         }
-
         createUser(Email, Password)
             .then((userCredential) => {
                 const user = userCredential.user;
@@ -43,6 +40,17 @@ const Register = () => {
         }).catch((error) => {
 
         });
+    }
+
+    function googleHandler() {
+
+        googleSignIn(googleProvider)
+            .then((result) => {
+                const user = result.user;
+
+            }).catch((error) => {
+                const errorMessage = error.message;
+            });
     }
 
     return (
@@ -74,11 +82,11 @@ const Register = () => {
 
             <div className='mt-3'>
                 <ListGroup className='w-50 mx-auto'>
-                    <ListGroup.Item className='d-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
+                    <ListGroup.Item  className='d-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
                         <FaFacebookF className='text-primary rounded-circle' />
                         <span>Continue With Facebook</span>
                     </ListGroup.Item>
-                    <ListGroup.Item className='d-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
+                    <ListGroup.Item onClick={googleHandler} className='d-flex align-items-center gap-5 rounded-pill my-3 btn btn-dark'>
                         <FaGoogle className='text-primary rounded-circle ' />
                         <span>Continue With Google</span>
                     </ListGroup.Item>
