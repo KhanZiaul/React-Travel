@@ -18,7 +18,7 @@ const SharedNav = () => {
                         <Nav.Link className='mx-4 fw-2 fw-bold' href="#link">Destination</Nav.Link>
                         <Nav.Link className='mx-4 fw-2 fw-bold' href="#link">Blog</Nav.Link>
                         <Nav.Link className='mx-4 fw-2 fw-bold' href="#link">Contact</Nav.Link>
-                        <Link to='/layout/login' > <Button className='text-light mx-4' variant="warning">Login</Button></Link>
+                        <Link to='/layout/login' > <Button className='text-light mx-4' variant="dark">Login</Button></Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

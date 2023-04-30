@@ -24,7 +24,7 @@ const Navigation = () => {
                 </Navbar.Collapse>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
-                        <Link to='/layout/login' > <Button className='text-light' variant="warning">Login</Button></Link>
+                        <Link to='/layout/login' > <Button className='text-light' variant="dark">Login</Button></Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

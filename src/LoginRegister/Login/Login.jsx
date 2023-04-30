@@ -22,12 +22,12 @@ const Login = () => {
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Remember Me" />
                     </Form.Group>
-                    <Link className='text-warning' to='/layout/register'>Forgot Password</Link>
+                    <Link className='text-danger' to='/layout/register'>Forgot Password</Link>
                 </div>
-                <Button className='w-100 text-light' variant="warning" type="submit">
+                <Button className='w-100 text-light' variant="dark" type="submit">
                     Login
                 </Button>
-                <p className='my-3 text-center'>Don't have an account ? <Link className='text-warning' to='/layout/register'>Create an account</Link></p>
+                <p className='my-3 text-center'>Don't have an account ? <Link className='text-danger' to='/layout/register'>Create an account</Link></p>
             </Form>
 
             <div className='mt-3'>
