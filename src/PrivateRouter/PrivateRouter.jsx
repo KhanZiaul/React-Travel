@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Booking = () => {
+const PrivateRouter = () => {
     return (
         <div>
-            <h2>Booking Now</h2>
+            
         </div>
     );
 };
 
-export default Booking;
+export default PrivateRouter;
