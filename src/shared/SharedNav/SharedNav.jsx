@@ -8,7 +8,9 @@ const SharedNav = () => {
     return (
         <Navbar expand="lg">
             <Container>
-                <Navbar.Brand href="#home"> <img className='navLogo light' src={logo} alt="" /> </Navbar.Brand>
+                <Link to='/'>
+                    <img className='navLogo light' src={logo} alt="" />
+                </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
