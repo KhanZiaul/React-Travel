@@ -28,7 +28,7 @@ export default function Spots() {
                 centeredSlides={true}
                 slidesPerView={"auto"}
                 coverflowEffect={{
-                    rotate: 50,
+                    rotate: 75,
                     stretch: 0,
                     depth: 100,
                     modifier: 1,
@@ -42,17 +42,17 @@ export default function Spots() {
                     datas?.map(data => {
                         return (
                             <SwiperSlide key={data.id}>
-                                <div className="p-3">
+                                <div className="p-3 ">
                                     <div>
                                         <h2 className='text-light mb-2'>{data.name}</h2>
                                         <p className='fw-normal text-light'>{data.details.slice(0, 150) + '....'}</p>
                                         <Link to={`/${data.id}`}>
-                                        <button className="btn btn-warning mb-2 text-white ">Booking <FaArrowRight /> </button>
+                                        <button className="btn btn-dark mb-2 text-white ">Booking <FaArrowRight /> </button>
                                     </Link>
                                 </div>
                                 <div>
 
-                                    <img className='spotsImage' src={data.photoURL} alt="" />
+                                    <img className='h-100 w-100' src={data.photoURL} alt="" />
 
                                 </div>
                             </div>

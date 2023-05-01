@@ -36,7 +36,7 @@ const SpotDetails = () => {
                             <Form.Control type="date" placeholder="" className='fw-bold'/>
                         </Form.Group>
                     </div>
-                    <Link to='/layout/booking'>
+                    <Link to={`/layout/booking/${spotDetails.id}`}>
                         <Button className='w-100 text-light fw-bold' variant="warning" type="submit">
                             Start Booking
                         </Button>

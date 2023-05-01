@@ -5,14 +5,13 @@ import Form from 'react-bootstrap/Form';
 import { FaFacebook, FaFacebookF, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import { FacebookAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { FacebookAuthProvider, GoogleAuthProvider } from 'firebase/auth'; 
 
 const Login = () => {
     const { popUpSignIn, signInUser } = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider();
     const facebookProvider = new FacebookAuthProvider();
     const location = useLocation()
-    console.log(location)
     const from = location?.state?.from?.pathname || '/'
     const navigate = useNavigate()
     function formHandler(event) {
@@ -35,6 +34,7 @@ const Login = () => {
         popUpSignIn(googleProvider)
             .then((result) => {
                 const user = result.user;
+                navigate(from , { replace: true })
             }).catch((error) => {
                 const errorMessage = error.message;
             });
@@ -44,6 +44,7 @@ const Login = () => {
         popUpSignIn(facebookProvider)
             .then((result) => {
                 const user = result.user;
+                navigate(from , { replace: true })
             }).catch((error) => {
                 const errorMessage = error.message;
             });
