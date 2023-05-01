@@ -32,6 +32,12 @@ const Booking = () => {
                                         )
                                     }
                             </div>
+                            <div className='d-flex gap-2 mb-2'>
+                                    {
+                                        hotelData?.Property_amenities.map(feature => <p>{feature}</p> 
+                                        )
+                                    }
+                            </div>
                         </div>
                     </div>
                 </div>
