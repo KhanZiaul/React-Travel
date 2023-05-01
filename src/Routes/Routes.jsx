@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       {
         path: ':id',
         element: <SpotDetails></SpotDetails>,
-        loader: ({ params }) => fetch(`http://localhost:8000/spots/${params.id}`)
+        loader: ({ params }) => fetch(`https://datas-jet.vercel.app/spots/${params.id}`)
       }
     ]
   },
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       {
         path: 'booking/:id',
         element: <PrivateRouter><Booking></Booking></PrivateRouter>,
-        loader:({params}) => fetch(`http://localhost:8000/hotels/${params.id}`)
+        loader:({params}) => fetch(`https://datas-jet.vercel.app/hotels/${params.id}`)
       }
     ]
   }

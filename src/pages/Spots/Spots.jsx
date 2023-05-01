@@ -16,7 +16,7 @@ import { FaArrowRight } from 'react-icons/fa';
 export default function Spots() {
     const [datas, setDatas] = useState([])
     useEffect(() => {
-        fetch('http://localhost:8000/spots')
+        fetch('https://datas-jet.vercel.app/spots')
             .then(res => res.json())
             .then(allDatas => setDatas(allDatas))
     }, [])
