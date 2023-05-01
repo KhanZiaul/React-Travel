@@ -15,25 +15,32 @@ const SpotDetails = () => {
                 </div>
 
                 <Form className='bg-light mb-3 p-3 w-auto rounded'>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Origion</Form.Label>
-                        <Form.Control type="text" placeholder="" className='fw-bold' />
-                    </Form.Group>
+                    <Form.Label>Origion</Form.Label>
+                    <Form.Select aria-label="Default select example" className='fw-bold'>
+                        <option >Dhaka</option>
+                        <option >Barishal</option>
+                        <option >Chittagong </option>
+                        <option >Khulna</option>
+                        <option >Mymensingh</option>
+                        <option >Rajshahi</option>
+                        <option >Sylhet</option>
+                        <option >Rangpur</option>
+                    </Form.Select>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Group className="mb-3 mt-2" controlId="formBasicPassword">
                         <Form.Label>Destination</Form.Label>
-                        <Form.Control type="text" placeholder="" className='fw-bold' />
+                        <Form.Control type="text" placeholder="" value={spotDetails.name} className='fw-bold' />
                     </Form.Group>
                     <div className='d-lg-flex gap-3 my-3'>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>From</Form.Label>
-                            <Form.Control type="date" placeholder="" className='fw-bold'/>
+                            <Form.Control type="date" placeholder="" className='fw-bold' />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>To</Form.Label>
-                            <Form.Control type="date" placeholder="" className='fw-bold'/>
+                            <Form.Control type="date" placeholder="" className='fw-bold' />
                         </Form.Group>
                     </div>
                     <Link to={`/layout/booking/${spotDetails.id}`}>
