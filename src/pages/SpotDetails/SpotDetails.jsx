@@ -16,7 +16,7 @@ const SpotDetails = () => {
 
                 <Form className='bg-light mb-3 p-3 w-auto rounded'>
                     <Form.Label>Origion</Form.Label>
-                    <Form.Select aria-label="Default select example" className='fw-bold'>
+                    <Form.Select aria-label="Default select example" className='fw-bold' required>
                         <option >Dhaka</option>
                         <option >Barishal</option>
                         <option >Chittagong </option>
@@ -29,18 +29,18 @@ const SpotDetails = () => {
 
                     <Form.Group className="mb-3 mt-2" controlId="formBasicPassword">
                         <Form.Label>Destination</Form.Label>
-                        <Form.Control type="text" placeholder="" value={spotDetails.name} className='fw-bold' />
+                        <Form.Control type="text" placeholder="" value={spotDetails.name} className='fw-bold' required />
                     </Form.Group>
                     <div className='d-lg-flex gap-3 my-3'>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>From</Form.Label>
-                            <Form.Control type="date" placeholder="" className='fw-bold' />
+                            <Form.Control type="date" className='fw-bold' required/>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>To</Form.Label>
-                            <Form.Control type="date" placeholder="" className='fw-bold' />
+                            <Form.Control type="date"  className='fw-bold' required/>
                         </Form.Group>
                     </div>
                     <Link to={`/layout/booking/${spotDetails.id}`}>
