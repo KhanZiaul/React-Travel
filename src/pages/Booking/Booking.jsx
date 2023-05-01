@@ -15,10 +15,10 @@ const Booking = () => {
 
                     </div>
                     <div className='d-flex gap-4'>
-                        <div>
+                        <div className='mb-2'>
                             <img className='hotelImg mb-2' src={hotelData?.image} alt="" />
                         </div>
-                        <div>
+                        <div  className='mb-2'>
                             <p className='fw-bold fs-6'>{hotelData?.hotel_name}</p>
                             <div className='d-flex gap-2'>
                                 <p>{hotelData?.guests} guests</p>
@@ -26,13 +26,11 @@ const Booking = () => {
                                 <p>{hotelData?.beds} beds</p>
                                 <p>{hotelData?.baths} baths</p>
                             </div>
-                            <div className='d-flex gap-4'>
-                                <p>
+                            <div className='d-flex gap-2 mb-2'>
                                     {
-                                        hotelData?.Room_features.map(feature => feature
+                                        hotelData?.Room_features.map(feature => <p>{feature}</p> 
                                         )
                                     }
-                                </p>
                             </div>
                         </div>
                     </div>
