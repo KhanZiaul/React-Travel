@@ -10,7 +10,7 @@ const Booking = () => {
     return (
         <Container className='my-5'>
             {hotelDatas.map(hotelData =>
-                <div key={hotelData.id}>
+                <div key={hotelData.key}>
                     <div>
 
                     </div>
@@ -28,15 +28,20 @@ const Booking = () => {
                             </div>
                             <div className='d-flex gap-2 mb-2'>
                                     {
-                                        hotelData?.Room_features.map(feature => <p>{feature}</p> 
+                                        hotelData?.Room_features.map((feature , index)=> <p key={index}>{feature}</p> 
                                         )
                                     }
                             </div>
                             <div className='d-flex gap-2 mb-2'>
                                     {
-                                        hotelData?.Property_amenities.map(feature => <p>{feature}</p> 
+                                        hotelData?.Property_amenities.map((amenities , index) => <p key={index}>{amenities}</p> 
                                         )
                                     }
+                            </div>
+                            <div>
+                                <div>
+                                    <p>{hotelData?.rating}  ({hotelData?.given_rating})</p>
+                                </div>
                             </div>
                         </div>
                     </div>
