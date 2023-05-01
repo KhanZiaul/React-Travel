@@ -2,11 +2,10 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import './Booking.css'
 import { Container } from 'react-bootstrap';
+import ReactStarsRating from 'react-awesome-stars-rating';
 
 const Booking = () => {
     const hotelDatas = useLoaderData()
-    console.log(hotelDatas)
-
     return (
         <Container className='my-5'>
             {hotelDatas.map(hotelData =>
@@ -14,11 +13,11 @@ const Booking = () => {
                     <div>
 
                     </div>
-                    <div className='d-flex gap-4'>
+                    <div className='d-lg-flex gap-4'>
                         <div className='mb-2'>
                             <img className='hotelImg mb-2' src={hotelData?.image} alt="" />
                         </div>
-                        <div  className='mb-2'>
+                        <div className='mb-2'>
                             <p className='fw-bold fs-6'>{hotelData?.hotel_name}</p>
                             <div className='d-flex gap-2'>
                                 <p>{hotelData?.guests} guests</p>
@@ -27,20 +26,24 @@ const Booking = () => {
                                 <p>{hotelData?.baths} baths</p>
                             </div>
                             <div className='d-flex gap-2 mb-2'>
-                                    {
-                                        hotelData?.Room_features.map((feature , index)=> <p key={index}>{feature}</p> 
-                                        )
-                                    }
+                                {
+                                    hotelData?.Room_features.map((feature, index) => <p key={index}>{feature}</p>
+                                    )
+                                }
                             </div>
                             <div className='d-flex gap-2 mb-2'>
-                                    {
-                                        hotelData?.Property_amenities.map((amenities , index) => <p key={index}>{amenities}</p> 
-                                        )
-                                    }
+                                {
+                                    hotelData?.Property_amenities.map((amenities, index) => <p key={index}>{amenities}</p>
+                                    )
+                                }
                             </div>
-                            <div>
+                            <div className='d-flex justify-content-between align-items-center mb-2'>
+                                <div className='d-flex align-items-center gap-2'>
+                                    <ReactStarsRating value={hotelData?.rating} size={15} />
+                                    <span>{hotelData?.rating}  ({hotelData?.given_rating})</span>
+                                </div>
                                 <div>
-                                    <p>{hotelData?.rating}  ({hotelData?.given_rating})</p>
+                                    <span className='fw-normal'>{hotelData?.cost}</span>
                                 </div>
                             </div>
                         </div>
