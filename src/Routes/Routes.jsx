@@ -7,6 +7,7 @@ import Booking from "../pages/Booking/Booking";
 import SharedLayout from "../Layouts/SharedLayout";
 import Register from "../LoginRegister/Register/Register";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
+import Blogs from "../pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: 'register',
         element: <Register></Register>
+      },
+      {
+        path:'blogs',
+        element:<Blogs></Blogs>
       },
       {
         path: 'booking/:id',

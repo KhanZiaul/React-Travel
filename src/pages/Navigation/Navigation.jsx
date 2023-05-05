@@ -9,9 +9,9 @@ const Navigation = () => {
     const { user, logOut } = useContext(AuthContext)
     function logOutHandler() {
         logOut().then(() => {
-           
+
         }).catch((error) => {
-            
+
         });
     }
     return (
@@ -26,9 +26,12 @@ const Navigation = () => {
                         <div>
                             <input type="text" placeholder='Search your Destination...' className='px-5 py-2 rounded mx-2 border-light opacity-75' />
                         </div>
-                        <Nav.Link className='mx-2 fw-bold text-light' href="#home">News</Nav.Link>
-                        <Nav.Link className='mx-2 fw-2 fw-bold text-light' href="#link">Destination</Nav.Link>
-                        <Nav.Link className='mx-2 fw-2 fw-bold text-light' href="#link">Blog</Nav.Link>
+                        <div>
+                            <Link className='mx-2 fw-2 fw-bold text-light ' to='/'>Destination</Link>
+                        </div>
+                        <div>
+                            <Link className='mx-2 fw-2 fw-bold text-light' to='/layout/blogs'>Blogs</Link>
+                        </div>
                     </Nav>
                 </Navbar.Collapse>
                 <Navbar.Collapse id="basic-navbar-nav">
