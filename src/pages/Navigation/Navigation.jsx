@@ -22,15 +22,15 @@ const Navigation = () => {
                 </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto">
+                    <Nav className="ms-auto flex align-items-center">
                         <div>
                             <input type="text" placeholder='Search your Destination...' className='px-5 py-2 rounded mx-2 border-light opacity-75' />
                         </div>
                         <div>
-                            <Link className='mx-2 fw-2 fw-bold text-light ' to='/'>Destination</Link>
+                            <Link className='mx-2 fw-2 fw-bold text-light text-decoration-none' to='/'>Destination</Link>
                         </div>
                         <div>
-                            <Link className='mx-2 fw-2 fw-bold text-light' to='/layout/blogs'>Blogs</Link>
+                            <Link className='mx-2 fw-2 fw-bold text-light text-decoration-none' to='/layout/blogs'>Blogs</Link>
                         </div>
                     </Nav>
                 </Navbar.Collapse>
