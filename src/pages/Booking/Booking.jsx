@@ -52,11 +52,6 @@ const Booking = () => {
                         </div>
                     )}
                 </div>
-                <div className='mt-4'>
-                    {
-                        hotelDatas.map(data => <iframe className='w-100 h-100' src={data?.frame ? data.frame : ""}></iframe>)
-                    }
-                </div>
             </div>
         </Container>
     );
