@@ -8,6 +8,7 @@ import SharedLayout from "../Layouts/SharedLayout";
 import Register from "../LoginRegister/Register/Register";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
 import Blogs from "../pages/Blogs/Blogs";
+import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path:'blogs',
         element:<Blogs></Blogs>
+      },
+      {
+        path:'contact',
+        element:<Contact></Contact>
       },
       {
         path: 'booking/:id',

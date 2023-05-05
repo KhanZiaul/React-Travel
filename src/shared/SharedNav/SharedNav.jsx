@@ -25,7 +25,7 @@ const SharedNav = () => {
                     <Nav className="ms-auto flex align-items-center">
                         <Link className='mx-4 fw-2 fw-bold text-black text-decoration-none' to='/'>Destination</Link>
                         <Link to='/layout/blogs' className='mx-4 text-black fw-2 fw-bold text-decoration-none' >Blogs</Link>
-                        <Link className='mx-4 text-decoration-none text-black fw-2 fw-bold' to=''>Contact</Link>
+                        <Link className='mx-4 text-decoration-none text-black fw-2 fw-bold' to='/layout/contact'>Contact</Link>
                         {
                             user ?
                                 <div>
