@@ -31,6 +31,39 @@ const Blogs = () => {
                     When planning your trip to the Sundarbans, it is important to keep in mind that the forest is a protected area, and there are strict regulations in place to ensure the preservation of the ecosystem. It is essential to follow the guidelines and regulations set by the authorities.
                 </p>
             </div>
+
+            <div className='border rounded border-primary p-5 my-4'>
+                <h2 className='text-center my-5 '>Cox's Bazar</h2>
+                <p> A Comprehensive Guide to the World's Longest Beach
+                    Cox's Bazar is a beautiful seaside town located in the Chittagong division of Bangladesh. The town is famous for its long sandy beach, which stretches for over 120 kilometers and is considered the longest natural beach in the world.</p>
+                <p>
+                    In addition to the beach, Cox's Bazar is also home to several other attractions, including the Himchori Waterfall, the Inani Beach, and the Maheshkhali Island. The town is also known for its seafood, which is fresh and delicious.
+
+                    When it comes to accommodation, there are several options available in Cox's Bazar, ranging from budget guesthouses to luxury resorts. Many of the hotels are located near the beach, and offer stunning views of the sea.
+                </p>
+                <p>
+                    One of the best ways to explore Cox's Bazar is by taking a walk along the beach. The beach is perfect for swimming, sunbathing, and relaxing. You can also rent a horse or a camel to ride along the beach, which can be a fun experience.
+
+                    Another popular attraction in Cox's Bazar is the Cox's Bazar Marine Aquarium. The aquarium is home to a variety of marine species, including sharks, rays, and turtles. The aquarium also has a museum that showcases the marine biodiversity of Bangladesh.
+                </p>
+                <p>
+                    If you are looking for a cultural experience, you can visit the Adinath Temple, a Hindu temple located on top of a hill. The temple offers stunning views of the surrounding area and is a popular spot for watching the sunset.
+                </p>
+            </div>
+
+            <div className='border rounded border-primary p-5 my-4'>
+                <h2 className='text-center my-5 '>Srimangal</h2>
+                <p> A Complete Travel Guide to the Tea Capital of Bangladesh
+                    Srimangal is a small town located in the northeastern part of Bangladesh. The town is famous for its tea gardens, which produce some of the finest tea in the world. The tea gardens are spread out over a large area, and offer a serene and tranquil environment.</p>
+                <p>
+                    To explore the tea gardens, you can take a guided tour on foot or on a bicycle. The tour will take you through the gardens, where you can see the tea plants and learn about the process of tea production. You can also visit the tea factories, where you can see how the tea is processed and packaged.
+
+                    In addition to the tea gardens, Srimangal is also home to several other attractions, including the Lawachara National Park, the Baikka Beel Wetlands, and the Madhabpur Lake. The Lawachara National Park is home to several species of wildlife, including gibbons, macaques, and several species of birds.
+                </p>
+                <p>
+                    When it comes to accommodation, there are several options available in Srimangal, ranging from budget guesthouses to luxury resorts. Many of the hotels are located near the tea gardens and offer stunning views of the surrounding area.
+                </p>
+            </div>
         </div>
     );
 };
