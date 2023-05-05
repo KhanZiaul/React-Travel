@@ -22,11 +22,10 @@ const SharedNav = () => {
                 </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto">
-                        <Nav.Link className='mx-4 fw-bold' href="#home">News</Nav.Link>
-                        <Nav.Link className='mx-4 fw-2 fw-bold' href="#link">Destination</Nav.Link>
-                        <Nav.Link className='mx-4 fw-2 fw-bold' href="#link">Blog</Nav.Link>
-                        <Nav.Link className='mx-4 fw-2 fw-bold' href="#link">Contact</Nav.Link>
+                    <Nav className="ms-auto flex align-items-center">
+                        <Link className='mx-4 fw-2 fw-bold text-black text-decoration-none' to='/'>Destination</Link>
+                        <Link to='/layout/blogs' className='mx-4 text-black fw-2 fw-bold text-decoration-none' >Blogs</Link>
+                        <Link className='mx-4 text-decoration-none text-black fw-2 fw-bold' to=''>Contact</Link>
                         {
                             user ?
                                 <div>
